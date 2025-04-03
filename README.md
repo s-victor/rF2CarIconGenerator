@@ -19,7 +19,7 @@ Note, when installing `ImageMagick`, make sure `Add application directory to you
 
 ## Usage
 
-1. Download `rF2CarIconGenerator` from release page, and install `ImageMagick`.
+1. Download `rF2CarIconGenerator` from [Release](https://github.com/s-victor/rF2CarIconGenerator/releases) page, and install `ImageMagick`.
 
 2. Extract `rF2CarIconGenerator.exe` file, place it in `rFactor 2` game root folder. This is required for correctly locating and accessing game's `ScreenShots` folder.
 
