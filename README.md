@@ -44,6 +44,10 @@ Finally, generated icons are located in:
 
 While `Start Monitoring` enabled, this tool monitors `UserData\ScreenShots` folder for any changes made recently. If newly created screenshot is detected in this folder, this tool will automatically retrieve corresponding vehicle skin livery file name (VEH) info from `rF2 Rest API`, and rename new screenshot with this skin file name. Then it automatically activates icon set generating process and saving them to `ScreenShots\IconOutput` folder.
 
+### What happens if I took multiple screenshots of the same car skin livery
+
+Newer screenshot will simply override older ones of the same skin livery, so there will be only one icon set for the same car skin livery.
+
 ### Regenerate icons
 
 It is possible to regenerate icons by clicking `Regenerate Icon`, provided that icon source files are available in `ScreenShots` folder. Generating progress can be viewed from `log` and `status bar`.
