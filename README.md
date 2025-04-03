@@ -8,6 +8,7 @@ With this tool, all it needs is to load up car in showroom, and press `in-game s
 
 Special thanks to `DJCruicky` for the inspiration of utilizing rF2's Rest API via AHK.
 
+![preview](https://github.com/user-attachments/assets/19d7624b-8141-491b-8daf-e301f9e80e89)
 
 ## Requirements
 
@@ -49,6 +50,7 @@ It is possible to regenerate icons by clicking `Regenerate Icon`, provided that 
 
 Note, any screenshot file that starts with `GRAB_` prefix are excluded from regenerating process.
 
+![gen_icon](https://github.com/user-attachments/assets/c9fa71f7-8ebc-4a77-b493-faee826ac156)
 
 ## License
 rF2CarIconGenerator is licensed under the [MIT License](./LICENSE.txt).
