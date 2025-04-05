@@ -2,7 +2,7 @@
 
 Fully automated car skin livery icon generator for `rFactor 2`.
 
-This tool automates and streamlines the entire process of car skin livery icon creation, by automatically rename showroom screenshots to corresponding vehicle name and generate full rF2-standard icon set.
+This tool automates and streamlines the entire process of car skin livery icon creation, by automatically renaming showroom screenshots to corresponding vehicle file name and generating full set of rF2-standard icons.
 
 With this tool, all it needs is to load up car in showroom, and press `in-game screenshot hotkey`, then this tool will take care of the rest and generate a whole set of icons in a second.
 
@@ -26,12 +26,14 @@ Note, when installing `ImageMagick`, make sure `Add application directory to you
 3. Launch `rF2CarIconGenerator`, click `Start Monitoring` button to enable automated screenshots `renaming` and icon `generating`.  
 Note, if you are creating icons in `Dev Mode`, toggle on `Dev Mode` check-box.
 
-4. Launch `rF2`, select a side view type showroom for creating icons, such as the `SideView UI` or `EasyIconCreatorShowroom_SMMG` showroom.
+4. Launch `rF2`, select a side view type showroom for creating icons, such as the `SideView UI` or `EasyIconCreatorShowroom` showroom.
 
 5. Load a vehicle in showroom, and hide top bar (or side bar in Dev Mode), then Press `1` to hide showroom background.
 
-6. Press `in-game screenshots hotkey`, and this tool will automatically rename and generating full icon set for selected vehicle, done. Repeat this step for other vehicles or skins to create more icons.  
-Note, two short beep sounds will be played after a screenshot file is renamed, or icon set is finished generating.
+6. Press `in-game screenshots hotkey`, and this tool will automatically rename and generate full icon set for selected vehicle, done. Repeat this step for other vehicles or skins to create more icons.  
+(Two short beep sounds will be played to notify a screenshot file that is renamed, or when icon set is finished generating.)
+
+    > Note, screenshots must be done using in-game screenshots hotkey, which is defined in rF2's "Assign Controls" setting. Screenshots made using Steam "In Game" hotkey or from other APP will not work.
 
 Finally, generated icons are located in:
 - For main game: `rFactor 2\UserData\ScreenShots\IconOutput`
@@ -44,15 +46,23 @@ Finally, generated icons are located in:
 
 While `Start Monitoring` enabled, this tool monitors `UserData\ScreenShots` folder for any changes made recently. If newly created screenshot is detected in this folder, this tool will automatically retrieve corresponding vehicle skin livery file name (VEH) info from `rF2 Rest API`, and rename new screenshot with this skin file name. Then it automatically activates icon set generating process and saving them to `ScreenShots\IconOutput` folder.
 
-### What happens if I took multiple screenshots of the same car skin livery
+### What happens if multiple screenshots are taken for the same skin livery
 
-Newer screenshot will simply override older ones of the same skin livery, so there will be only one icon set for the same car skin livery.
+Newer screenshot will simply override older ones of the same skin livery, and icon set will be regenerated for the same skin livery.
+
+### Rest API & URL Port
+
+The auto-renaming feature relies on rF2's `Rest API` to function correctly, which this tool will automatically connect to Rest API `URL Port` to retrieve vehicle data. This `URL Port` value, by game's default setting, points towards `5397`, which will work out of box automatically.
+
+However, under extremely rare cases, the game may change its default Rest API `Port` value to something else, which could cause connection failure for this tool and show an `Error (abort)` message in `Vehicle File Name` box. If that happens, you will need to manually edit game's `player.json` file and fix the port value back to `5397`. This file is located in following folder:
+- For main game: `rFactor 2\UserData\player`
+- For Dev Mode: `rFactor 2\ModDev\UserData\player`
+
+Once found `player.json` file, open it with notepad, search for `"WebUI port"`, and change its value back to `5397`, then save it (make sure game is closed before saving the file), and restart game to take effect.
 
 ### Regenerate icons
 
-It is possible to regenerate icons by clicking `Regenerate Icon`, provided that icon source files are available in `ScreenShots` folder. Generating progress can be viewed from `log` and `status bar`.
-
-Note, any screenshot file that starts with `GRAB_` prefix are excluded from regenerating process.
+It is possible to regenerate icons by clicking `Regenerate Icon`, provided that original screenshot files are available in `ScreenShots` folder. Generating progress can be viewed from `log` and `status bar`. Note, any screenshot file that starts with `GRAB_` prefix are excluded from regenerating process.
 
 ![gen_icon](https://github.com/user-attachments/assets/c9fa71f7-8ebc-4a77-b493-faee826ac156)
 
