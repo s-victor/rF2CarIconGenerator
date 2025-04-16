@@ -16,7 +16,6 @@ This tool requires installation `ImageMagick` v7.0 or higher for processing and 
 
 Note, when installing `ImageMagick`, make sure `Add application directory to your system path` option is selected, otherwise it may not work.
 
-
 ## Usage
 
 1. Download `rF2CarIconGenerator` from [Release](https://github.com/s-victor/rF2CarIconGenerator/releases) page, and install `ImageMagick`.
@@ -30,15 +29,26 @@ Note, if you are creating icons in `Dev Mode`, toggle on `Dev Mode` check-box.
 
 5. Load a vehicle in showroom, and hide top bar (or side bar in Dev Mode), then Press `1` to hide showroom background.
 
-6. Press `in-game screenshots hotkey`, and this tool will automatically rename and generate full icon set for selected vehicle, done. Repeat this step for other vehicles or skins to create more icons.  
-(Two short beep sounds will be played to notify a screenshot file that is renamed, or when icon set is finished generating.)
+6. Press `in-game screenshots hotkey`, and this tool will automatically rename and generate full icon set for selected vehicle, done. Repeat this step for other vehicles or skins to create more icons.
 
     > Note, screenshots must be done using in-game screenshots hotkey, which is defined in rF2's "Assign Controls" setting. Screenshots made using Steam "In Game" hotkey or from other APP will not work.
+
+    > Generating progress is queued, which means you can start taking screenshots for next car skin while current icon generating is in progress.
 
 Finally, generated icons are located in:
 - For main game: `rFactor 2\UserData\ScreenShots\IconOutput`
 - For Dev Mode: `rFactor 2\ModDev\UserData\ScreenShots\IconOutput`
 
+## Options
+
+- Dev Mode:
+    - Enable this to detect and generate icons from `rF2 development mode`.
+- Generate Icon:
+    - Enable icon auto-generating.
+- Finish Beep:
+    - Play short beep sounds when screenshot file renamed, or icon set fully generated.
+- Stay On Top:
+    - Keep this tool on top of rF2 or other windows, useful for monitoring icon generating progress while taking screenshots. Note, rF2 must be running in `windowed` or `borderless` mode to allow this tool visible on top of rF2.
 
 ## Additional Notes
 
@@ -62,7 +72,7 @@ Once found `player.json` file, open it with notepad, search for `"WebUI port"`, 
 
 ### Regenerate icons
 
-It is possible to regenerate icons by clicking `Regenerate Icon`, provided that original screenshot files are available in `ScreenShots` folder. Generating progress can be viewed from `log` and `status bar`. Note, any screenshot file that starts with `GRAB_` prefix are excluded from regenerating process.
+It is possible to regenerate icons by clicking `Regenerate`, provided that original screenshot files are available in `ScreenShots` folder. Generating progress can be viewed from `log` and `status bar`. Note, any screenshot file that starts with `GRAB_` prefix are excluded from regenerating process.
 
 ![gen_icon](https://github.com/user-attachments/assets/c9fa71f7-8ebc-4a77-b493-faee826ac156)
 

@@ -1,3 +1,9 @@
+v0.2.0 (2025-04-16)
+----------------------------
+- Add "Progress bar" for visualizing icon generating progress.
+- Add "Finish Beep" check box for toggling notification beep sounds.
+- Add "Stay On Top" check box for keeping this tool on top of rF2 or other windows, useful for monitoring icon generating progress while taking screenshots.
+
 v0.1.0 (2025-04-03)
 ----------------------------
 - Initial version.
